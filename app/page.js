@@ -3,10 +3,12 @@ import Image from "next/image";
 import {useState} from 'react'
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import { TextField, Button } from "@mui/material";
+import { TextField, Button, Typography } from "@mui/material";
 const { markdownToTxt } = require('markdown-to-txt');
-import Markdown from 'markdown-to-jsx'
-import { render } from 'react-dom'
+import { Inter } from 'next/font/google'
+ 
+// If loading a variable font, you don't need to specify the font weight
+const inter = Inter({ subsets: ['latin'] })
 
 
 export default function Home() {
@@ -58,6 +60,7 @@ export default function Home() {
   }
 
   return (
+    
     <Box 
     width="100vw" 
     height="100vh" 
@@ -66,7 +69,19 @@ export default function Home() {
     justifyContent="center" 
     alignItems="center"
     >
-    
+      <Box
+        width="600px"
+        justifyContent="center"
+        alignItems="center"
+        display="flex"
+        spacing={3}
+        border = "2px solid black"
+        bgcolor="#539DE6"
+        padding={3}
+        color="white">
+        <Typography variant="h4" fontFamily={inter}>Headstarter Customer Service</Typography>
+      </Box>
+      
       <Stack  
         direction = "column"
         width = "600px"
@@ -94,6 +109,7 @@ export default function Home() {
                     borderRadius = {14}
                     p = {3}
                     fontSize={13}
+                    fontFamily={inter}
                     >
                     {markdownToTxt(message.content)}
                   </Box>
