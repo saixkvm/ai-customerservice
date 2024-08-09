@@ -66,12 +66,11 @@ export default function Home() {
     
       <Stack  
         direction = "column"
-        width = "500px"
+        width = "600px"
         height = "600px"
         border = "1px solid black"
         p = {2}
-        spacing = {3}
-        >
+        spacing = {3}>
           <Stack 
           direction = "column" 
           spacing = {2} 
@@ -85,13 +84,15 @@ export default function Home() {
                 }
                 >
                   <Box 
-                  bgcolor = {
-                    message.role === "assistant" ? 'primary.main' : 'secondary.main'
-                  }
-                  color = "white"
-                  borderRadius = {16}
-                  p = {3}>
-                    {message.content}
+                    bgcolor = {
+                      message.role === "assistant" ? 'primary.main' : 'secondary.main'
+                    }
+                    color = "white"
+                    borderRadius = {14}
+                    p = {3}
+                    fontSize={13}
+                    >
+                      {message.content}
                   </Box>
                 
                 </Box>
