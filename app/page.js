@@ -4,6 +4,9 @@ import {useState} from 'react'
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import { TextField, Button } from "@mui/material";
+const { markdownToTxt } = require('markdown-to-txt');
+import Markdown from 'markdown-to-jsx'
+import { render } from 'react-dom'
 
 
 export default function Home() {
@@ -92,7 +95,7 @@ export default function Home() {
                     p = {3}
                     fontSize={13}
                     >
-                      {message.content}
+                    {markdownToTxt(message.content)}
                   </Box>
                 
                 </Box>
